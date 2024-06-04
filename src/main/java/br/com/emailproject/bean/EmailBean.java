@@ -14,6 +14,9 @@ import jakarta.inject.Named;
 public class EmailBean implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	public static final String DESTINATARIO = "allantp004@gmail.com";
+	public static final String ASSUNTO = "Mudança de senha";
+	
 	@Inject
 	private EmailService emailService;
 	
@@ -24,7 +27,7 @@ public class EmailBean implements Serializable{
 	
 	private Email montarEmail() {
 		EmailLayout layout = new EmailLayout();
-		return layout.montarEmailAdministrador("allantp004@gmail.com", "Mudança de senha");
+		return layout.montarEmailAdministrador(DESTINATARIO, ASSUNTO);
 	}
 
 }
